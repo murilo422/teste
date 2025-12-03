@@ -187,11 +187,12 @@
       <h3>Contato</h3>
       <p style="color:var(--muted)">Fale com a gente para agendar ou tirar dúvidas.</p>
 
+      <!-- FORMULÁRIO MODIFICADO PARA ENVIAR PELO WHATSAPP -->
       <form id="contactForm" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:720px;margin-top:12px">
-        <input name="nome" placeholder="Seu nome" required />
-        <input name="telefone" placeholder="WhatsApp (opcional)" />
-        <input name="servico" placeholder="Serviço desejado" />
-        <button type="submit" class="btn" style="border:none">Enviar</button>
+        <input id="nome" name="nome" placeholder="Seu nome" required />
+        <input id="telefone" name="telefone" placeholder="WhatsApp (opcional)" />
+        <input id="servico" name="servico" placeholder="Serviço desejado" />
+        <button type="button" class="btn" onclick="enviarWhats()" style="border:none">Enviar</button>
       </form>
 
       <p id="formMsg" style="color:var(--muted);margin-top:8px"></p>
@@ -231,12 +232,22 @@
       }
     });
 
-    document.getElementById('contactForm').addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const nome = e.target.nome.value || 'Amigo';
-      document.getElementById('formMsg').textContent = `Valeu ${nome}! Recebemos sua mensagem — vamos responder o quanto antes.`;
-      e.target.reset();
-    });
+    /* FORMULÁRIO -> ENVIAR PARA WHATSAPP */
+    function enviarWhats() {
+      const nome = document.getElementById('nome').value;
+      const telefone = document.getElementById('telefone').value;
+      const servico = document.getElementById('servico').value;
+
+      const texto = 
+`Nome: ${nome}%0AWhatsApp: ${telefone}%0AServiço: ${servico}`;
+
+      const url = `https://wa.me/5535991306362?text=${texto}`;
+
+      window.open(url, '_blank');
+
+      document.getElementById('formMsg').textContent =
+        `Valeu ${nome}! Abrimos seu WhatsApp para enviar a mensagem.`;
+    }
   </script>
 
 </body>
