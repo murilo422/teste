@@ -43,7 +43,7 @@
     .portfolio h3{font-family:Montserrat;margin:0 0 14px;text-align:center}
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .grid .item{background:var(--card);padding:10px;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-height:260px}
-    .grid img{width:100%;height:220px;object-fit:cover;border-radius:10px;cursor:pointer;display:block}
+    .grid img{width:100%;max-width:420px;height:auto;object-fit:cover;border-radius:10px;cursor:pointer;display:block}
 
     /* Pricing */
     .pricing{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
@@ -60,7 +60,6 @@
 
     /* WhatsApp floating */
     .whatsapp{position:fixed;right:18px;bottom:18px;background:#25D366;color:#fff;border-radius:999px;padding:10px 14px;box-shadow:0 8px 24px rgba(2,6,23,0.5);display:flex;gap:10px;align-items:center;text-decoration:none;font-weight:700}
-
     .whatsapp img{width:22px;height:22px;display:inline-block}
 
     /* Responsive */
@@ -79,7 +78,6 @@
 
   <header>
     <div class="brand">
-      <!-- logo: coloque images/logo.png na pasta images -->
       <img src="logo.png" alt="Barbearia do Rafael Logo">
       <div>
         <h1>Barbearia do Rafael</h1>
@@ -90,10 +88,9 @@
       <a href="#portfolio">Portfólio</a>
       <a href="#precos">Preços</a>
       <a href="#contato">Contato</a>
-    <a class="btn" href="https://wa.me/5535991306362" target="_blank" rel="noopener">
-  Agendar
-</a>
-
+      <a class="btn" href="https://wa.me/5535991306362" target="_blank" rel="noopener">
+        Agendar
+      </a>
     </nav>
   </header>
 
@@ -109,28 +106,24 @@
           <div class="feature">Finalização com navalha</div>
         </div>
 
- <div class="pricing" style="margin-top:18px">
-  <div class="priceCard">
-    <h4>Corte simples</h4>
-    <p>45 minutos • R$ 0</p>
-    <a class="btn" href="https://wa.me/5535991306362" target="_blank" rel="noopener">
-      Agendar
-    </a>
-  </div>
-  <div class="priceCard">
-    <h4>Corte navalhado</h4>
-    <p>60 minutos • R$ 5</p>
-    <a class="btn" href="https://wa.me/5535991306362" target="_blank" rel="noopener">
-      Agendar
-    </a>
-  </div>
-</div>
+        <div class="pricing" style="margin-top:18px">
+          <div class="priceCard">
+            <h4>Corte simples</h4>
+            <p>45 minutos • R$ 0</p>
+            <a class="btn" href="https://wa.me/5535991306362" target="_blank" rel="noopener">Agendar</a>
+          </div>
+          <div class="priceCard">
+            <h4>Corte navalhado</h4>
+            <p>60 minutos • R$ 5</p>
+            <a class="btn" href="https://wa.me/5535991306362" target="_blank" rel="noopener">Agendar</a>
+          </div>
+        </div>
 
       </div>
 
       <div style="border-radius:16px;overflow:hidden;box-shadow:0 12px 40px rgba(2,6,23,0.7)">
-        <!-- imagem principal (use a logo ou outra foto se quiser) -->
-        <img src="corte2.jpg" alt="Rafael - Barbearia" style="width:420px;max-width:100%;height:100%;object-fit:cover;display:block" />
+        <img src="corte2.jpg" alt="Rafael - Barbearia"
+        style="width:100%;max-width:420px;height:auto;object-fit:cover;display:block" />
       </div>
     </section>
 
@@ -140,13 +133,13 @@
 
       <div class="grid" style="margin-top:12px">
         <div class="item">
-          <img src="corte2.jpg" alt="corte preciso" style="width:420px;max-width:100%;height:100%;object-fit:cover;display:block" />
+          <img src="corte2.jpg" alt="corte preciso" />
         </div>
         <div class="item">
-          <img src="corte3.jpg" alt="corte preciso" style="width:420px;max-width:100%;height:100%;object-fit:cover;display:block" />
+          <img src="corte3.jpg" alt="corte preciso" />
         </div>
         <div class="item">
-          <img src="corte1.jpg" alt="corte preciso" style="width:420px;max-width:100%;height:100%;object-fit:cover;display:block" />
+          <img src="corte1.jpg" alt="corte preciso" />
         </div>
       </div>
     </section>
@@ -172,9 +165,9 @@
       <p style="color:var(--muted)">Fale com a gente para agendar ou tirar dúvidas.</p>
 
       <form id="contactForm" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:720px;margin-top:12px">
-        <input name="nome" placeholder="Seu nome" required style="padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
-        <input name="telefone" placeholder="WhatsApp (opcional)" style="padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
-        <input name="servico" placeholder="Serviço desejado" style="padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
+        <input name="nome" placeholder="Seu nome" required />
+        <input name="telefone" placeholder="WhatsApp (opcional)" />
+        <input name="servico" placeholder="Serviço desejado" />
         <button type="submit" class="btn" style="border:none">Enviar</button>
       </form>
 
@@ -186,12 +179,10 @@
     </footer>
   </main>
 
-  <!-- WhatsApp flutuante (ícone via CDN) -->
   <a class="whatsapp" href="https://wa.me/5535991306362" target="_blank" rel="noopener">
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"> Agendar • WhatsApp
   </a>
 
-  <!-- Modal -->
   <div class="modal" id="modal" role="dialog" aria-hidden="true">
     <div class="inner" role="document">
       <img src="" alt="ampliado" id="modalImg"/>
@@ -199,7 +190,6 @@
   </div>
 
   <script>
-    // abrir modal ao clicar nas imagens do portfólio
     document.querySelectorAll('.grid img').forEach(img=>{
       img.addEventListener('click', ()=>{
         const modal = document.getElementById('modal');
@@ -210,7 +200,6 @@
       });
     });
 
-    // fechar modal ao clicar fora da imagem
     document.getElementById('modal').addEventListener('click', (e)=>{
       if(e.target.id === 'modal' || e.target.id === 'modalImg') {
         document.getElementById('modal').style.display = 'none';
@@ -219,21 +208,13 @@
       }
     });
 
-    // form fake submit
     document.getElementById('contactForm').addEventListener('submit', (e)=>{
       e.preventDefault();
       const nome = e.target.nome.value || 'Amigo';
       document.getElementById('formMsg').textContent = `Valeu ${nome}! Recebemos sua mensagem — vamos responder o quanto antes.`;
       e.target.reset();
     });
-
-    // pre-load images (progressive)
-    document.querySelectorAll('.grid img').forEach(i=>{
-      const src = i.getAttribute('src');
-      const img = new Image();
-      img.src = src;
-      img.onload = ()=> i.style.opacity = 1;
-    });
   </script>
+
 </body>
 </html>
